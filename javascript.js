@@ -16,9 +16,20 @@ function computerPlays () {
 
     //pseudocode
     //let variable choice equal a number from 1-3
-        //if number 1, return "rock"
-        //if number 2, return "paper"
-        //if number 3, return "scissors"
+        //if number 0, return "rock"
+        //if number 1, return "paper"
+        //if number 2, return "scissors"
+
+    let choice = getRandomInt(3);
+
+    switch(choice) {
+      case 0:
+        return "rock";
+      case 1:
+        return "paper";
+      case 2:
+        return "scissors";
+    }
 
 
 
