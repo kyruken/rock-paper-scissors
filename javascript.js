@@ -1,8 +1,34 @@
 
+function game () {
+  let gameDecision = '';
+  let playerScore = 0, computerScore = 0;
+  for (let rounds = 0; rounds < 5; rounds++) {
+    gameDecision = playRound();
+    if (gameDecision === "You win!") {
+      playerScore += 1;
+    }
+
+    if (gameDecision === "You lose") {
+      computerScore += 1;
+    }
+  }
+
+  if (playerScore > computerScore) {
+    console.log("You win!");
+  }
+
+  if (computerScore > playerScore) {
+    console.log("You lose");
+  }
+
+  if (playerScore === computerScore) {
+    console.log("Tie!");
+  }
+}
+
 function computerPlays () {
 
-    let choice = getRandomInt(3);
-
+    let choice = Math.floor(Math.random() * 3);
     switch(choice) {
       case 0:
         return "rock";
@@ -34,42 +60,36 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = getPlayerSelection();
     computerSelection = computerPlays();
 
-    if (playerSelection === "rock" && computerPlays === "rock") {
+    if (playerSelection === "rock" && computerSelection === "rock") {
       return "Tie!";
     }
-    if (playerSelection === "rock" && computerPlays === "paper") {
+    if (playerSelection === "rock" && computerSelection === "paper") {
       return "You lose";
     }
-    if (playerSelection === "rock" && computerPlays === "scissors") {
+    if (playerSelection === "rock" && computerSelection === "scissors") {
       return "You win!";
     }
 
-    if (playerSelection === "paper" && computerPlays === "rock") {
+    if (playerSelection === "paper" && computerSelection === "rock") {
         return "You win!";
       }
-    if (playerSelection === "paper" && computerPlays === "paper") {
+    if (playerSelection === "paper" && computerSelection === "paper") {
         return "Tie!";
       }
-    if (playerSelection === "paper" && computerPlays === "scissors") {
+    if (playerSelection === "paper" && computerSelection === "scissors") {
         return "You lose";
       }
 
-    if (playerSelection === "scissors" && computerPlays === "rock") {
+    if (playerSelection === "scissors" && computerSelection === "rock") {
         return "You lose";
       }
-    if (playerSelection === "scissors" && computerPlays === "paper") {
+    if (playerSelection === "scissors" && computerSelection === "paper") {
         return "You win!";
       }
-    if (playerSelection === "scissors" && computerPlays === "scissors") {
+    if (playerSelection === "scissors" && computerSelection === "scissors") {
         return "Tie!";
       }
 
 
 
-}
-
-function game () {
-    for (let rounds = 0; rounds < 5; rounds++) {
-        console.log(playRound());
-    }
 }
