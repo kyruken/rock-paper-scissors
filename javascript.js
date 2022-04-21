@@ -52,6 +52,9 @@ function playRound(playerSelection, computerSelection) {
     // playRound takes in parameters playerSelection and computerSelection and compares
     // returns win or loss message'
 
+    playerSelection = getPlayerSelection();
+    computerSelection = computerPlays();
+
     if (playerSelection === "rock" && computerPlays === "rock") {
       return "Tie!";
     }
@@ -88,6 +91,6 @@ function playRound(playerSelection, computerSelection) {
 
 function game () {
     for (let rounds = 0; rounds < 5; rounds++) {
-        playRound();
+        console.log(playRound());
     }
 }
