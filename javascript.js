@@ -52,32 +52,35 @@ function playRound(playerSelection, computerSelection) {
     // playRound takes in parameters playerSelection and computerSelection and compares
     // returns win or loss message'
 
-    //pseudocode
-    //make helper functions for each situation for the playerSelection
+    if (playerSelection === "rock" && computerPlays === "rock") {
+      return "Tie!";
+    }
+    if (playerSelection === "rock" && computerPlays === "paper") {
+      return "You lose";
+    }
+    if (playerSelection === "rock" && computerPlays === "scissors") {
+      return "You win!";
+    }
 
-    //if playerSelection equals rock and computerSelection equals rock
-      // return tie message
-    //if playerSelection equals rock and computerSelection equals paper
-      // return loss message
-    //else playerSelection equals rock and computerSelection equals scissors
-      // return win message
+    if (playerSelection === "paper" && computerPlays === "rock") {
+        return "You win!";
+      }
+    if (playerSelection === "paper" && computerPlays === "paper") {
+        return "Tie!";
+      }
+    if (playerSelection === "paper" && computerPlays === "scissors") {
+        return "You lose";
+      }
 
-      //if playerSelection equals paper and computerSelection equals rock
-      // return win message
-    //if playerSelection equals paper and computerSelection equals paper
-      // return tie message
-    //else playerSelection equals paper and computerSelection equals scissors
-      // return loss message
-
-    //if playerSelection equals scissors and computerSelection equals rock
-      // return loss message
-    //if playerSelection equals scissors and computerSelection equals scissors
-      // return tie message
-    //else playerSelection equals scissors and computerSelection equals paper
-      // return win message
-
-    
-    playerSelection.toLowerCase();
+    if (playerSelection === "scissors" && computerPlays === "rock") {
+        return "You lose";
+      }
+    if (playerSelection === "scissors" && computerPlays === "paper") {
+        return "You win!";
+      }
+    if (playerSelection === "scissors" && computerPlays === "scissors") {
+        return "Tie!";
+      }
 
 
 
@@ -85,6 +88,6 @@ function playRound(playerSelection, computerSelection) {
 
 function game () {
     for (let rounds = 0; rounds < 5; rounds++) {
-        //put playRounds function here
+        playRound();
     }
 }
