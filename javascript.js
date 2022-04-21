@@ -1,7 +1,7 @@
 
 function game () {
   let gameDecision = '';
-  let playerScore = 0, computerScore = 0;
+  let playerScore = 0, computerScore = 0, tie = 0;
   for (let rounds = 0; rounds < 5; rounds++) {
     gameDecision = playRound();
     if (gameDecision === "You win!") {
@@ -11,18 +11,22 @@ function game () {
     if (gameDecision === "You lose") {
       computerScore += 1;
     }
+
+    if (gameDecision === "Tie!") {
+      tie += 1;
+    }
   }
 
   if (playerScore > computerScore) {
-    console.log("You win!");
+    console.log(`You win! Score is: Player: ${playerScore} - Computer: ${computerScore} - Ties: ${tie}`);
   }
 
   if (computerScore > playerScore) {
-    console.log("You lose");
+    console.log(`You lose. Score is: Player: ${playerScore} - Computer: ${computerScore} - Ties: ${tie}`);
   }
 
   if (playerScore === computerScore) {
-    console.log("Tie!");
+    console.log(`Tie! Score is: Player: ${playerScore} - Computer: ${computerScore} - Ties: ${tie}`);
   }
 }
 
