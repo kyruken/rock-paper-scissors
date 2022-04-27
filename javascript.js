@@ -20,7 +20,8 @@ function game (playerPoint, computerPoint) {
   }
  
 
-  document.getElementById("player-score").innerHTML = playerPoints;
+  document.getElementById("player-score").textContent = playerPoints;
+  document.getElementById("computer-score").textContent = computerPoints;
 }
 
 function computerPlays () {
@@ -53,19 +54,19 @@ function playRound(playerSelection, computerSelection) {
   }
 
   if (playerSelection === "paper" && computerSelection === "scissors") {
-    console.log("lose");
+    game(0, 1);
   }
 
   if (playerSelection === "paper" && computerSelection === "rock") {
-    console.log("win");
+    game(1, 0);
   }
 
   if (playerSelection === "scissors" && computerSelection === "rock") {
-    console.log("lose");
+    game(0, 1);
   }
 
   if (playerSelection === "scissors" && computerSelection === "paper") {
-    console.log("win");
+    game(1, 0);
   }
 }
 
