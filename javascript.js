@@ -1,7 +1,17 @@
 
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      playRound(button.classList, computerPlays);
+    });
+  });
+  
 function game () {
   let gameDecision = '';
   let playerScore = 0, computerScore = 0, tie = 0;
+
+ 
+  
   // for (let rounds = 0; rounds < 5; rounds++) {
   //   gameDecision = playRound();
   //   if (gameDecision === "You win!") {
@@ -15,7 +25,6 @@ function game () {
   //   if (gameDecision === "Tie!") {
   //     tie += 1;
   //   }
-  }
 
   if (playerScore > computerScore) {
     console.log(`You win! Score is: Player: ${playerScore} - Computer: ${computerScore} - Ties: ${tie}`);
@@ -60,9 +69,6 @@ function getPlayerSelection() {
 }
 
 function playRound(playerSelection, computerSelection) {
-
-    playerSelection = getPlayerSelection();
-    computerSelection = computerPlays();
 
     if (playerSelection === "rock" && computerSelection === "rock") {
       return "Tie!";
