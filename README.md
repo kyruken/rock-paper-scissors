@@ -13,7 +13,8 @@ The features of this project include:
 
 1. Working rock-paper-scissor buttons that return an element ID based on the button clicked
 2. Randomly chosen choice of rock-paper-scissors from a computer
-3. Dynamic scoreboard that changes the score of the player and computer based on the choice
+3. Dynamic showing of the computer's choice 
+4. Dynamic scoreboard that changes the score of the player and computer based on the choice
 of the player and the choice of the computer
 
 
