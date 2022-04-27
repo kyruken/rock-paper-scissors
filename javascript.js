@@ -2,19 +2,19 @@
 function game () {
   let gameDecision = '';
   let playerScore = 0, computerScore = 0, tie = 0;
-  for (let rounds = 0; rounds < 5; rounds++) {
-    gameDecision = playRound();
-    if (gameDecision === "You win!") {
-      playerScore += 1;
-    }
+  // for (let rounds = 0; rounds < 5; rounds++) {
+  //   gameDecision = playRound();
+  //   if (gameDecision === "You win!") {
+  //     playerScore += 1;
+  //   }
 
-    if (gameDecision === "You lose") {
-      computerScore += 1;
-    }
+  //   if (gameDecision === "You lose") {
+  //     computerScore += 1;
+  //   }
 
-    if (gameDecision === "Tie!") {
-      tie += 1;
-    }
+  //   if (gameDecision === "Tie!") {
+  //     tie += 1;
+  //   }
   }
 
   if (playerScore > computerScore) {
