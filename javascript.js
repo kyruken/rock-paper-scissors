@@ -1,5 +1,7 @@
 let playerPoints = 0, computerPoints = 0;
 
+let computerChoice = "rock";
+
 const buttons = document.querySelectorAll('.btn');
 
 buttons.forEach(button => { button.addEventListener('click', () => {
@@ -19,9 +21,16 @@ function game (playerPoint, computerPoint) {
     computerPoints += 1;
   }
  
-
   document.getElementById("player-score").textContent = playerPoints;
   document.getElementById("computer-score").textContent = computerPoints;
+
+  if(computerPoints === 5) {
+    alert("You lose!");
+  }
+
+  if(playerPoints === 5) {
+    alert("You win!");
+  }
 }
 
 function computerPlays () {
@@ -30,10 +39,13 @@ function computerPlays () {
 
     switch(choice) {
       case 0:
+        document.getElementById("computer-choice").textContent = "rock";
         return "rock";
       case 1:
+        document.getElementById("computer-choice").textContent = "paper";
         return "paper";
       case 2:
+        document.getElementById("computer-choice").textContent = "scissors";
         return "scissors";
     }
 
